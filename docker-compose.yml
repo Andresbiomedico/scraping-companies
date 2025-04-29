@@ -1,0 +1,18 @@
+services:
+  scraper1:
+    build: .
+    container_name: selenium_scraper_1
+    volumes:
+      - ./data_scraper1/data.json:/app/data/output/data.json
+    environment:
+      - DISPLAY=:99
+    shm_size: '2gb'
+
+  scraper2:
+    build: .
+    container_name: selenium_scraper_2
+    volumes:
+      - ./data_scraper2/data.json:/app/data/output/data.json
+    environment:
+      - DISPLAY=:100
+    shm_size: '2gb'
